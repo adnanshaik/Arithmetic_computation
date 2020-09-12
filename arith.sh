@@ -20,3 +20,18 @@ do
         arr[k]=$i
         ((k++))
 done
+
+
+for((k=0;k<=$(( ${#arr[@]}-1 ));k++))
+do
+for((j=$(( k+1 ));j<=${#arr[@]}-1;j++))
+do
+        if [[ ${arr[k]} -lt ${arr[j]} ]]
+        then
+                temp=${arr[k]}
+                arr[k]=${arr[j]}
+                arr[j]=$temp
+        fi
+done
+done
+echo ${arr[@]}
