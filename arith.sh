@@ -14,3 +14,9 @@ dict[1]=$result1
 dict[2]=$result2
 dict[3]=$result3
 dict[4]=$result4
+
+for i in ${dict[@]}
+do
+        arr[k]=$i
+        ((k++))
+done
